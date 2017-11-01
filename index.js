@@ -18,15 +18,17 @@ const listenPort = 6336;
 
 //-------------------------------------------------------------
 
-const kodi = require('./kodi');
+const kodi = require('./kodiApi');
 const neeoApi = require('./neeoApi');
+const kodiDevice = require('./kodiDevice');
 
 console.log('----------------------------------');
 console.log('NEEO driver for KODI');
 console.log('----------------------------------');
 
-kodi.connect(kodiIp, kodiPort)
+neeoApi.initialize(listenPort, brainIp, [ kodiDevice ])
     .then(() =>{
-        neeoApi.initialize(listenPort, brainIp);
+
+        kodi.initialize(kodiIp, kodiPort);
     });
 

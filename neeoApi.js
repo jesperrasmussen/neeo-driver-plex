@@ -1,21 +1,18 @@
 'use strict';
 
 const neeoapi = require('neeo-sdk');
-const kodiDevice = require('./kodiDevice');
 
-let driverPort;
-
-function startServer(brain) {
+function startServer(brain, listenPort, devices) {
     if (brain.name)
         console.log(`Starting NEEO API server and connect to NEEO Brain: ${brain.name}`);
     else
         console.log(`Starting NEEO API server and connect to NEEO Brain: ${brain}`);
 
-    neeoapi.startServer({
+    return neeoapi.startServer({
         brain,
-        port: driverPort,
+        port: listenPort,
         name: 'custom-adapter',
-        devices: [kodiDevice]
+        devices: devices
     })
         .then(() => {
             console.log('NEEO Api is ready and running!');
@@ -30,17 +27,15 @@ function startServer(brain) {
         });
 }
 
-exports.initialize = function(listenPort, brainIp = '') {
-    driverPort = listenPort;
-
+exports.initialize = function(listenPort, brainIp, devices) {
     if (brainIp) {
-        startServer(brainIp);
+        return startServer(brainIp, listenPort, devices);
     } else {
         console.log('Discover one NEEO Brain...');
-        neeoapi.discoverOneBrain()
+        return neeoapi.discoverOneBrain()
             .then((brain) => {
                 console.log('NEEO Brain discovered:', brain.name);
-                startServer(brain);
+                return startServer(brain, listenPort, devices);
             });
     }
 }

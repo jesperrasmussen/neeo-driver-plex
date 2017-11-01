@@ -1,7 +1,7 @@
 'use strict';
 
 const neeoapi = require('neeo-sdk');
-const kodi = require('./kodi');
+const kodi = require('./kodiApi');
 
 const controller = {
     onButtonPressed: function onButtonPressed(name) {
@@ -9,6 +9,9 @@ const controller = {
 
         switch(name)
         {
+            // Power
+            case "POWER ON":          kodi.startApiService(); break;
+            case "POWER OFF":         kodi.stopApiService(); break;
             // Navigation
             case "CURSOR UP":         kodi.run('Input.Up'); break;
             case "CURSOR DOWN":       kodi.run('Input.Down'); break;
@@ -27,8 +30,10 @@ const controller = {
             case "STOP":              kodi.stop(); break;
             case "NEXT":              kodi.skipNext(); break;
             case "PREVIOUS":          kodi.skipPrevious(); break;
-            case "FORWARD":           kodi.stepForward(); break;
-            case "REVERSE":           kodi.stepBack(); break;
+            //case "FORWARD":           kodi.stepForward(); break;
+            //case "REVERSE":           kodi.stepBack(); break;
+            case "FORWARD":           kodi.fastForward(); break;
+            case "REVERSE":           kodi.rewind(); break;
             // Shortcuts
             case "MY VIDEOS":         kodi.activateWindow('videos'); break;
             case "LIVE TV":           kodi.activateWindow('tvchannels'); break;
