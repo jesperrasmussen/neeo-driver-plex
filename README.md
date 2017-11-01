@@ -13,11 +13,12 @@ This driver adds support for KODI MediaCenter to NEEO
 3.  Open your computer's console or command prompt.
 4.  Go to the folder where the extracted files are.
 5.  Type: npm install
-6.  Start the driver by typing: node index.js
+6.  Edit the config.js file, to adjust the settings 
+7.  Start the driver by typing: node index.js
 
 ## Features
 * Power on the MediaPC via Wake-on-LAN
-* Optional exit KODI or Shutdown MediaPC on poweroff
+* Optional exit KODI or shutdown the MediaPC on poweroff
 * Auto reconnect KODI, if connection was lost
 
 ## Available control function
