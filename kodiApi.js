@@ -120,54 +120,67 @@ exports.isConnected = function(method, args) {
  * ------------------------------------------------------------------------ */
 
 exports.run = function(method, args) {
-    return kodiConnection.run(method, args);
+    if (connected)
+        return kodiConnection.run(method, args);
 };
 
 exports.play = function() {
-    kodiConnection.run('Input.ExecuteAction', { action: "play"})
+    if (connected)
+        return kodiConnection.run('Input.ExecuteAction', { action: "play"})
 };
 
 exports.pause = function() {
-    kodiConnection.run('Input.ExecuteAction', { action: "pause"})
+    if (connected)
+        return kodiConnection.run('Input.ExecuteAction', { action: "pause"})
 };
 
 exports.stop = function() {
-    kodiConnection.run('Input.ExecuteAction', { action: "stop"})
+    if (connected)
+        return kodiConnection.run('Input.ExecuteAction', { action: "stop"})
 };
 
 exports.pageup = function() {
-    kodiConnection.run('Input.ExecuteAction', { action: "pageup"})
+    if (connected)
+        return kodiConnection.run('Input.ExecuteAction', { action: "pageup"})
 };
 
 exports.pagedown = function() {
-    kodiConnection.run('Input.ExecuteAction', { action: "pagedown"})
+    if (connected)
+        return kodiConnection.run('Input.ExecuteAction', { action: "pagedown"})
 };
 
 exports.skipNext = function() {
-    kodiConnection.run('Input.ExecuteAction', { action: "skipnext"})
+    if (connected)
+        return kodiConnection.run('Input.ExecuteAction', { action: "skipnext"})
 };
 
 exports.skipPrevious = function() {
-    kodiConnection.run('Input.ExecuteAction', { action: "skipprevious"})
+    if (connected)
+        return kodiConnection.run('Input.ExecuteAction', { action: "skipprevious"})
 };
 
 exports.stepForward = function() {
-    kodiConnection.run('Input.ExecuteAction', { action: "stepforward"})
+    if (connected)
+        return kodiConnection.run('Input.ExecuteAction', { action: "stepforward"})
 };
 
 exports.stepBack = function() {
-    kodiConnection.run('Input.ExecuteAction', { action: "stepback"})
+    if (connected)
+        return kodiConnection.run('Input.ExecuteAction', { action: "stepback"})
 };
 
 exports.fastForward = function() {
-    kodiConnection.run('Input.ExecuteAction', { action: "fastforward"})
+    if (connected)
+        return kodiConnection.run('Input.ExecuteAction', { action: "fastforward"})
 };
 
 exports.rewind = function() {
-    kodiConnection.run('Input.ExecuteAction', { action: "rewind"})
+    if (connected)
+        return kodiConnection.run('Input.ExecuteAction', { action: "rewind"})
 };
 
 exports.activateWindow = function(name) {
-    return kodiConnection.run('GUI.ActivateWindow', { window: name });
+    if (connected)
+        return kodiConnection.run('GUI.ActivateWindow', { window: name });
 };
 
