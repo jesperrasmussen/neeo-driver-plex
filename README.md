@@ -7,8 +7,19 @@ This driver adds support for KODI MediaCenter to NEEO
 ## Requirements
 * Node.js (https://nodejs.org)
 
+## Enable JSON-RPC in KODI
+In _`System/Settings/Network/Services`_ activate
+
+'Allow programs on this system to control Kodi for localhost access only'
+
+and
+
+'Allow programs on other systems to control Kodi for access from other computers'
+
+as well.
+
 ## How to install
- Download or clone the git code.
+ Download or clone the code from github.
 ```
 git clone https://github.com/alxbauer/neeo-driver-kodi.git
 ```
