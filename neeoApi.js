@@ -31,7 +31,7 @@ exports.initialize = function(listenPort, brainIp, devices) {
     if (brainIp) {
         return startServer(brainIp, listenPort, devices);
     } else {
-        console.log('Discover one NEEO Brain...');
+        console.log('Discover one NEEO Brain ...');
         return neeoapi.discoverOneBrain()
             .then((brain) => {
                 console.log('NEEO Brain discovered:', brain.name);

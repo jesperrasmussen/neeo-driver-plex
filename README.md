@@ -8,13 +8,20 @@ This driver adds support for KODI MediaCenter to NEEO
 * Node.js (https://nodejs.org)
 
 ## How to install
-1.  Download or clone the git code.
-2.  Extract the files
-3.  Open your computer's console or command prompt.
-4.  Go to the folder where the extracted files are.
-5.  Type: npm install
-6.  Edit the config.js file, to adjust the settings 
-7.  Start the driver by typing: node index.js
+ Download or clone the git code.
+```
+git clone https://github.com/alxbauer/neeo-driver-kodi.git
+```
+Install required packages with npm
+```
+npm install
+```
+**Edit the config.js file to adjust the settings** 
+
+Start the driver
+```
+node index.js 
+```
 
 ## Features
 * Power on the MediaPC via Wake-on-LAN
