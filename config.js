@@ -19,7 +19,8 @@ config.kodi.broadcastAddress = '192.168.178.255'; // Only needed for Wake-on-LAN
 
 // NEEO Settings
 
-config.neeo.brainIp = '';                         // Set the IP address of the NEEO Brain, or leav empty to auto discover
+config.neeo.brainIp = '';                         // Set the IP address of the NEEO Brain, or leave empty to auto discover
+                                                  // Note: Auto discover the NEEO brain did not work always for me
 config.neeo.port = 6336;                          // Set the local TCP port for the NEEO REST-WebService
 
 //-------------------------------------------
