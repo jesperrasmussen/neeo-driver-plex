@@ -2,7 +2,9 @@
 
 // http://kodi.wiki/view/JSON-RPC_API/v8
 
-let kodi = require('kodi-ws')
+const config = require('./config');
+const kodi = require('kodi-ws')
+
 let kodiConnection = null
 
 let kodiIp = '';
@@ -56,6 +58,28 @@ function reconnect() {
     }
 }
 
+function wake() {
+    if (config.kodi.mac) {
+        let options = {}
+
+        // Important for windows
+        if (config.kodi.broadcastAddress) {
+            options.address = '192.168.178.255';
+            options.port = 7;
+        }
+
+        let wol = require('node-wol');
+        wol.wake(config.kodi.mac, options, function (error) {
+            if (error) {
+                console.error(error.message);
+                return;
+            }
+
+            console.log('Wake-on-LAN package sent to: ' + config.kodi.mac);
+        });
+    }
+};
+
 exports.initialize = function(ip, port = 9090) {
     kodiIp = ip;
     kodiPort = port;
@@ -66,14 +90,23 @@ exports.initialize = function(ip, port = 9090) {
 
 exports.startApiService = function() {
     autoReconnect = true;
+    wake();  // Try to start via wake-on-lan
     connect(false)
 };
 
 exports.stopApiService = function() {
     autoReconnect = false;
 
-    if (connected)
-        kodiConnection.run('Application.Quit');
+    if (connected) {
+        if (config.kodi.powerOff.toUpperCase() == 'EXIT') {
+            console.log('Exit KODI application.');
+            kodiConnection.run('Application.Quit');
+        }
+        else if (config.kodi.powerOff.toUpperCase() == 'SHUTDOWN') {
+            console.log('Shutdown KODI MediaPC.');
+            kodiConnection.run('System.Shutdown');
+        }
+    }
 
     console.log('KODI API service stopped.');
 };

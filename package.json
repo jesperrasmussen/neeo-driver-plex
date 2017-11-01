@@ -1,6 +1,6 @@
 {
   "name": "neeo-driver-kodi",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "NEEO driver for Kodi",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/alxbauer/neeo-driver-kodi#readme",
   "dependencies": {
     "kodi-ws": "^2.4.3",
-    "neeo-sdk": "^0.45.7"
+    "neeo-sdk": "^0.45.7",
+    "node-wol": "^0.1.1"
   }
 }
