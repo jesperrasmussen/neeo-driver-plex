@@ -1,5 +1,5 @@
 # NEEO driver for Plex
-This driver adds support for KODI MediaCenter to NEEO
+This driver adds support for Plex to NEEO
 
 * NEEO - The Thinking Remote: https://neeo.com
 * Plex: https://plex.tv
