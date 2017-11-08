@@ -1,27 +1,27 @@
 {
-  "name": "neeo-driver-kodi",
-  "version": "0.1.0",
-  "description": "NEEO driver for Kodi",
+  "name": "neeo-driver-plex",
+  "version": "0.0.1",
+  "description": "NEEO driver for Plex",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alxbauer/neeo-driver-kodi.git"
+    "url": "git+https://github.com/jesperrasmussen/neeo-driver-plex.git"
   },
   "keywords": [
     "neeo",
-    "kodi"
+    "plex"
   ],
-  "author": "Alexander Bauer",
+  "author": "Jesper Rasmussen",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alxbauer/neeo-driver-kodi/issues"
+    "url": "https://github.com/jesperrasmussen/neeo-driver-plex/issues"
   },
-  "homepage": "https://github.com/alxbauer/neeo-driver-kodi#readme",
+  "homepage": "https://github.com/jesperrasmussen/neeo-driver-plex#readme",
   "dependencies": {
-    "kodi-ws": "^2.4.3",
+    "plex-control": "^2.0.1",
     "neeo-sdk": "^0.45.7",
     "node-wol": "^0.1.1"
   }

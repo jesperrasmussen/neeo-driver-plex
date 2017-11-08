@@ -11,13 +11,13 @@ function startServer(brain, listenPort, devices) {
     return neeoapi.startServer({
         brain,
         port: listenPort,
-        name: 'custom-adapter',
+        name: 'plexthingy',
         devices: devices
     })
         .then(() => {
             console.log('NEEO Api is ready and running!');
             console.log('');
-            console.log('Use the NEEO app to search for "KODI" device.');
+            console.log('Use the NEEO app to search for "Plex" device.');
             console.log('');
         })
         .catch((error) => {
