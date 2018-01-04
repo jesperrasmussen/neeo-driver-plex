@@ -30,10 +30,8 @@ const controller = {
             case "STOP":              plex.playback('stop'); break;
             case "NEXT":              plex.playback('skipNext'); break;
             case "PREVIOUS":          plex.playback('skipPrevious'); break;
-            //case "FORWARD":           kodi.stepForward(); break;
-            //case "REVERSE":           kodi.stepBack(); break;
-            case "FORWARD":           plex.playback('fastForward'); break;
-            case "REVERSE":           plex.playback('rewind'); break;
+            case "FORWARD":           plex.playback('stepForward'); break;
+            case "REVERSE":           plex.playback('stepBack'); break;
             // Shortcuts
             //case "MY VIDEOS":         plex.activateWindow('videos'); break;
             //case "LIVE TV":           plex.activateWindow('tvchannels'); break;
