@@ -8,7 +8,9 @@ config.neeo = {};
 // KODI Settings
 
 config.plex.ip = '10.0.0.123';               // Set the IP address of Plex
-config.plex.client = '10.0.0.173';              // Set the client to control
+config.plex.client = '10.0.0.147';           // Set the client to control
+config.plex.username = '<username>';  
+config.plex.password = '<password>';
 
 // NEEO Settings
 

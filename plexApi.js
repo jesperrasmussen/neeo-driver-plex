@@ -25,8 +25,8 @@ function connect(reconnecting = false)
         console.log(`Trying to connect to Plex`);
 
     //These should be customizable
-    control = new PlexControl(plexIp, 'RasPlex', {username: '<username>', password: '<password>'});
-    control.setClient('RasPlex');
+    control = new PlexControl(config.plex.ip, config.plex.client, {username: config.plex.username, password: config.plex.password});
+    control.setClient(config.plex.client);
     //control.setClient('10.0.0.173');
     connected = true;
     console.log("Connected to Plex")
