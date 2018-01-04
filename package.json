@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/jesperrasmussen/neeo-driver-plex#readme",
   "dependencies": {
-    "plex-control": "^2.0.1",
+    "plex-control": "https://github.com/jesperrasmussen/node-plex-control/tarball/master",
     "neeo-sdk": "^0.45.7",
     "node-wol": "^0.1.1"
   }
