@@ -4,7 +4,7 @@ This driver adds support for Plex to NEEO
 * NEEO - The Thinking Remote: https://neeo.com
 * Plex: https://plex.tv
 
-This project was originally blatantly stolen from Alexanders [Kodi implementation](https://github.com/alxbauer/neeo-driver-kodi), and adjusted to use Plex-control to communicate with Plex Media Server / client through their HTTP API
+This project was originally based on Alexanders [Kodi implementation](https://github.com/alxbauer/neeo-driver-kodi), and adjusted to use Plex-control to communicate with Plex Media Server / client through their HTTP API. I've added a few patches to the plex-control and plex-api Node modules needed, to add support for recent PMS builds.
 
 Keep in mind this is work in progress, until Neeo get their own, proper Plex implementation up and running.
 
