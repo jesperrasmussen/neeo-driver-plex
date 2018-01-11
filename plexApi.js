@@ -27,7 +27,6 @@ function connect(reconnecting = false)
     //These should be customizable
     control = new PlexControl(config.plex.ip, config.plex.client, {username: config.plex.username, password: config.plex.password});
     control.setClient(config.plex.client);
-    //control.setClient('10.0.0.173');
     connected = true;
     console.log("Connected to Plex")
 }
@@ -82,7 +81,7 @@ exports.executeNavigation = function(method, args) {
         control.navigation[method](args).then(function () {
             console.log('success ' + method)
         }, function (err) {
-            console.err('Error while communicating with HTTP API', err);
+            console.error('Error while communicating with HTTP API', err);
         });
     }
 }
@@ -95,7 +94,7 @@ exports.playback = function(method, args) {
         control.playback[method](args).then(function(){
             console.log('success ' + method)
         }, function(err){
-            console.err('Error while communicating with HTTP API', err);
+            console.error('Error while communicating with HTTP API', err);
         });
     }
 }
