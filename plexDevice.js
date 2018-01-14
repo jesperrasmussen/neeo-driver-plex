@@ -20,7 +20,7 @@ const controller = {
             case "CURSOR ENTER":      plex.executeNavigation('select'); break;
             case "PAGE UP":           plex.executeNavigation('pageUp'); break;
             case "PAGE DOWN":         plex.executeNavigation('pageDown'); break;
-            case "HOME":              plex.run('Input.Home'); break;
+            case "HOME":              plex.executeNavigation('home'); break;
             case "BACK":              plex.executeNavigation('back'); break;
             case "MENU":              plex.executeNavigation('contextMenu'); break;
             case "INFO":              plex.executeNavigation('toggleOSD'); break;
@@ -43,7 +43,7 @@ const controller = {
     }
 };
 
-const plexDevice = neeoapi.buildDevice('PlexAwesome')
+const plexDevice = neeoapi.buildDevice('PLEX Remote')
     .setManufacturer('Plex')
     .addAdditionalSearchToken('plex')
     .setType('MEDIAPLAYER')
@@ -52,20 +52,14 @@ const plexDevice = neeoapi.buildDevice('PlexAwesome')
     // https://planet.neeo.com/t/k9tnlp#capability-names-button-names
 
     .addButton({ name: 'INFO', label: 'Info' })
-    .addButton({ name: 'GUIDE', label: 'Guide' })
     .addButton({ name: 'PAGE UP', label: 'Page up' })
     .addButton({ name: 'PAGE DOWN', label: 'Page down' })
-    .addButton({ name: 'HOME', label: 'Home' })
-    .addButton({ name: 'MY MUSIC', label: 'Music' })
-    .addButton({ name: 'MY VIDEOS', label: 'Movies' })
-    .addButton({ name: 'LIVE TV', label: 'Live TV' })
     .addButton({ name: 'EXIT', label: 'Exit' })
 
     .addButtonGroup('Power')
     .addButtonGroup('Volume')
     .addButtonGroup('Menu and Back')
     .addButtonGroup('Controlpad')
-    .addButtonGroup('Channel Zapper')
     .addButtonGroup('Transport')
     .addButtonGroup('Transport Search')
     .addButtonGroup('Transport Scan')

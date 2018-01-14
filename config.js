@@ -5,7 +5,7 @@ let config = {};
 config.plex = {};
 config.neeo = {};
 
-// KODI Settings
+// PLEX Settings
 
 config.plex.ip = '10.0.0.123';               // Set the IP address of Plex
 config.plex.client = '10.0.0.147';           // Set the client to control
